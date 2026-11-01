@@ -96,18 +96,52 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+    style_prefix "say"
 
     window:
         id "window"
 
-        if who is not None:
+        background Frame(Image("gui/textbox.png"), 0, 0, tile=False)
 
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
+        xsize 1500
+        ysize 300
 
-        text what id "what"
+        xalign 0.5
+        yalign .90
+
+        padding (45, 65, 45, 45)
+
+        text what id "what":
+            color "#ffffff"
+            size 40
+            line_spacing 4
+            xfill True
+            xmaximum 1500
+    
+            xpos 20
+            ypos -10
+
+    if who is not None:
+
+        window:
+            id "namebox"
+            style "namebox"
+
+            xsize 1500
+            ysize 150
+
+            xpos 210
+            ypos 0.512
+
+            padding (25, 20, 15, 10)
+
+            text who id "who":
+                color "#ffffff"
+                size 30
+                bold True
+
+                xpos 20
+                ypos 100
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -246,14 +280,14 @@ screen quick_menu():
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("AUTO") action Preference("auto-forward", "toggle")
+            textbutton _("SKIP") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Q.SAVE") action QuickSave()
+            textbutton _("Q.LOAD") action QuickLoad()
+            textbutton _("SAVE") action ShowMenu('save')
+            textbutton _("LOAD") action ShowMenu('load')
+            textbutton _("CONFIG") action ShowMenu('preferences')
+            textbutton _("LOG") action ShowMenu('history')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -268,14 +302,15 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_menu:
-    xalign 0.5
-    yalign 1.0
+    xalign 0.8
+    yalign 0.62
 
 style quick_button:
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
-    properties gui.text_properties("quick_button")
+    size 22
+    color "#ffffff"
 
 
 ################################################################################
