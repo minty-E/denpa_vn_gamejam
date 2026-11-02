@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -109,7 +109,7 @@ screen say(who, what):
         else:
             background Frame(Image("gui/textbox.png"), 0, 0, tile=False)
 
-            xsize 1500
+            xsize 1200
             ysize 300
 
             xalign 0.5
@@ -122,11 +122,11 @@ screen say(who, what):
             size 40
             line_spacing 4
             xfill True
-            xmaximum 1500
+            xmaximum 1100
     
             xpos 20
             if textbox_style == "mmo":
-                ypos -10
+                ypos -30
             else:
                 ypos 30
 
@@ -137,9 +137,9 @@ screen say(who, what):
             style "namebox"
 
             if textbox_style == "mmo":
-                xsize 1500
+                xsize 1200
                 ysize 150
-                xpos 210
+                xpos 120
                 ypos 0.512
                 padding (25, 20, 15, 10)
                 background Frame(Image("gui/namebox.png"), 0, 0, tile=False)
@@ -151,8 +151,10 @@ screen say(who, what):
             text who id "who":
                 color "#ffffff"
                 if textbox_style == "mmo":
-                    size 30
-                    bold True
+                    font "Jersey20.ttf"
+                    size 50
+                    kerning 1.5
+                    outlines [(2, "#7963be", 0, 0)]
                 else:
                     size 40
 
@@ -204,6 +206,8 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
+    drop_shadow (3, 3)
+    drop_shadow_color "#553f9e"
 
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
@@ -294,16 +298,24 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
+
+            if textbox_style == "mmo":
+                xalign 0.8
+                yalign 0.625
+            else:
+                xalign 0.95
+                yalign 0.72
+
             style "quick_menu"
 
-            textbutton _("AUTO") action Preference("auto-forward", "toggle")
-            textbutton _("SKIP") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Q.SAVE") action QuickSave()
-            textbutton _("Q.LOAD") action QuickLoad()
-            textbutton _("SAVE") action ShowMenu('save')
-            textbutton _("LOAD") action ShowMenu('load')
-            textbutton _("CONFIG") action ShowMenu('preferences')
-            textbutton _("LOG") action ShowMenu('history')
+            textbutton _("AUTO") action Preference("auto-forward", "toggle") text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("SKIP") action Skip() alternate Skip(fast=True, confirm=True) text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("Q.SAVE") action QuickSave() text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("Q.LOAD") action QuickLoad() text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("SAVE") action ShowMenu('save') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("LOAD") action ShowMenu('load') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("CONFIG") action ShowMenu('preferences') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            textbutton _("LOG") action ShowMenu('history') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -318,15 +330,23 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_menu:
-    xalign 0.8
-    yalign 0.62
+    # defaults are for mmo, change to irl once we have those values
+    xalign 0.9
+    yalign 0.7
 
 style quick_button:
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
-    size 22
+    size 19
     color "#ffffff"
+    font "ARIAL.ttf"
+
+style mmo_quick_button_text is quick_button_text:
+    font "Jersey20.ttf"
+    size 25
+    outlines [(2, "#7963be", 0, 0)]
+
 
 
 ################################################################################
