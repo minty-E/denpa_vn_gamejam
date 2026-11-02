@@ -101,13 +101,19 @@ screen say(who, what):
     window:
         id "window"
 
-        background Frame(Image("gui/textbox.png"), 0, 0, tile=False)
+        if textbox_style == "irl":
+            background Frame(Image("gui/textbox2.png"), 0, 0, tile=False)
+           
+            ysize 350
 
-        xsize 1500
-        ysize 300
+        else:
+            background Frame(Image("gui/textbox.png"), 0, 0, tile=False)
 
-        xalign 0.5
-        yalign .90
+            xsize 1500
+            ysize 300
+
+            xalign 0.5
+            yalign .90
 
         padding (45, 65, 45, 45)
 
@@ -119,7 +125,10 @@ screen say(who, what):
             xmaximum 1500
     
             xpos 20
-            ypos -10
+            if textbox_style == "mmo":
+                ypos -10
+            else:
+                ypos 30
 
     if who is not None:
 
@@ -127,18 +136,25 @@ screen say(who, what):
             id "namebox"
             style "namebox"
 
-            xsize 1500
-            ysize 150
-
-            xpos 210
-            ypos 0.512
-
-            padding (25, 20, 15, 10)
+            if textbox_style == "mmo":
+                xsize 1500
+                ysize 150
+                xpos 210
+                ypos 0.512
+                padding (25, 20, 15, 10)
+                background Frame(Image("gui/namebox.png"), 0, 0, tile=False)
+            else:
+                xpos 40
+                ypos 0.62
+                background Frame(Image("gui/namebox2.png"), 0, 0, tile=False)
 
             text who id "who":
                 color "#ffffff"
-                size 30
-                bold True
+                if textbox_style == "mmo":
+                    size 30
+                    bold True
+                else:
+                    size 40
 
                 xpos 20
                 ypos 100
