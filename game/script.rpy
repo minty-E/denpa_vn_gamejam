@@ -3,8 +3,8 @@ default textbox_style = "irl"
 define n = Character(None, kind=nvl)
 define so = Character("Sofia")
 define sh = Character("Sharlene")
-define shoko = Character("shokoichan")
-define sofiam = Character("sofiamagandz30")
+define shoko = Character("shokoichan", what_style="mmo_say_dialogue")
+define sofiam = Character("sofiamagandz30", what_style="mmo_say_dialogue")
 
 
 # The game starts here.
@@ -25,7 +25,7 @@ label start:
 
     # These display lines of dialogue.
 
-    shoko "You've created a new Ren'Py game."
+    sh "You've created a new Ren'Py game."
 
     $ textbox_style = "mmo"
 
