@@ -1,11 +1,10 @@
 default textbox_style = "irl"
 
-# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
+define n = Character(None, kind=nvl)
+define so = Character("Sofia")
+define sh = Character("Sharlene")
+define shoko = Character("shokoichan")
+define sofiam = Character("sofiamagandz30")
 
 
 # The game starts here.
@@ -26,9 +25,11 @@ label start:
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    shoko "You've created a new Ren'Py game."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    $ textbox_style = "mmo"
+
+    shoko "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 
