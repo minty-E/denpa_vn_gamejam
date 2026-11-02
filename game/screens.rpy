@@ -118,17 +118,15 @@ screen say(who, what):
         padding (45, 65, 45, 45)
 
         text what id "what":
-            color "#ffffff"
-            size 40
-            line_spacing 4
+            if textbox_style == "mmo":
+                    ypos -30
+            else:
+                    style_prefix "say"
+                    ypos 30
+
             xfill True
             xmaximum 1100
-    
             xpos 20
-            if textbox_style == "mmo":
-                ypos -30
-            else:
-                ypos 30
 
     if who is not None:
 
@@ -151,14 +149,16 @@ screen say(who, what):
             text who id "who":
                 color "#ffffff"
                 if textbox_style == "mmo":
-                    font "Jersey20.ttf"
-                    size 50
+                    font "zpix.ttf"
+                    size 40
                     kerning 1.5
-                    outlines [(2, "#7963be", 0, 0)]
+                    outlines [(4, "#7054d1", 0, 0)]
                 else:
                     size 40
+                    font "ARIALN.ttf"
+                    bold True
+                    kerning 1.5
 
-                xpos 20
                 ypos 100
 
 
@@ -176,6 +176,9 @@ style window is default
 style say_label is default
 style say_dialogue is default
 style say_thought is say_dialogue
+style mmo_say_dialogue is say_dialogue:
+    drop_shadow (3,3)
+    drop_shadow_color "#6751b0"
 
 style namebox is default
 style namebox_label is say_label
@@ -206,8 +209,16 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-    drop_shadow (3, 3)
-    drop_shadow_color "#553f9e"
+    color "#ffffff"
+    size 40
+    line_spacing 4
+
+style mmo_dialogue:
+    take say_dialogue
+    outlines [ (1, "#553f9e", 3, 3) ]
+    color "#ffffff"
+    size 40
+    line_spacing 4
 
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
@@ -308,15 +319,31 @@ screen quick_menu():
 
             style "quick_menu"
 
-            textbutton _("AUTO") action Preference("auto-forward", "toggle") text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("SKIP") action Skip() alternate Skip(fast=True, confirm=True) text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("Q.SAVE") action QuickSave() text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("Q.LOAD") action QuickLoad() text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("SAVE") action ShowMenu('save') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("LOAD") action ShowMenu('load') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("CONFIG") action ShowMenu('preferences') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
-            textbutton _("LOG") action ShowMenu('history') text_style ("mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text")
+            $ q_style = "mmo_quick_button_text" if textbox_style == "mmo" else "quick_button_text"
 
+            button action Preference("auto-forward", "toggle"):
+                text _("AUTO") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action Skip() alternate Skip(fast=True, confirm=True):
+                text _("SKIP") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action QuickSave():
+                text _("Q.SAVE") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action QuickLoad():
+                text _("Q.LOAD") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action ShowMenu('save'):
+                text _("SAVE") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action ShowMenu('load'):
+                text _("LOAD") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action ShowMenu('preferences'):
+                text _("CONFIG") style q_style at (None if textbox_style == "mmo" else squish_text)
+        
+            button action ShowMenu('history'):
+                text _("LOG") style q_style at (None if textbox_style == "mmo" else squish_text)
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -340,12 +367,13 @@ style quick_button:
 style quick_button_text:
     size 19
     color "#ffffff"
-    font "ARIAL.ttf"
+    font "ARIALN.ttf"
+    kerning 1.5
 
 style mmo_quick_button_text is quick_button_text:
     font "Jersey20.ttf"
-    size 25
-    outlines [(2, "#7963be", 0, 0)]
+    size 26
+    outlines [(2, "#7054d1", 0, 0)]
 
 
 
