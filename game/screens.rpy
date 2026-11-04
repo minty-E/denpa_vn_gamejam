@@ -306,13 +306,15 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-
         hbox:
             style_prefix "quick"
 
             if textbox_style == "mmo":
                 xalign 0.8
                 yalign 0.625
+            elif renpy.get_screen("nvl"):
+                xalign 0.5
+                yalign 1.0
             else:
                 xalign 0.95
                 yalign 0.72
