@@ -123,7 +123,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 30 # @sofive: putting this to 30 should make it pretty on par with most people's reading speed probably add a settings option for this as well
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0

@@ -1,0 +1,44 @@
+====== bugs/polish ======
+
+- screen space is cut off on my laptop, check with others
+    - make uniform resolution or just make it dynamic with settings
+    // @sofive: probably fixed
+
+- text is not scrolling in nvl and adv
+    // @sofive: fixed
+
+- nvl formatting is weird with classmate, probably just implement a similar UI with other games
+
+- nvl sometimes gets overflowed so separate when necessary
+
+- adv formatting is weird with name, find a way to make it more consistent UI wise
+
+- just better UI in general for title and stuff (follow up with art team)
+
+- separate scenes
+    // @sofive: implemented
+
+
+====== completion progress ======
+
+- check google drive and integrate art assets
+
+- check discord channel and integrate audio and sfx
+
+- implement scene screen (UI element ask group)
+
+====== asset integration ======
+
+- text UI (textboxes and stuff and novel formatting)
+
+- finish music integration with the script and stuff
+
+- sprites and layered images !! important
+
+- CGs (ask team about this)
+
+- backgrounds integration
+
+- script and ordering
+
+- title cards
