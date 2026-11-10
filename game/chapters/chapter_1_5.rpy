@@ -1,0 +1,13 @@
+label chapter_1_5:
+    nvl clear
+
+    n "My parents watch us talk and assume that we’re having a friendly time. They start to approach me, and I feel relief. I turn my head back to Sharlene and I swear to god that she’s laughing at me. Her ugly crooked smile is plastered again on her face. I wanted to slap her until she’d stop making that face. I surveyed the area again. There’s those brute girls from the other section, one of them kissing up to that boy from the grade above us. The way his head is shaved is so lopsided. I saw the little dandruff flakes in his hair. I counted them. There’s about one, two, then five, maybe seven of these little imps in the area. I don’t care. I checked again to see if they were staring at me. I stomp my foot 3 times to assess if they are. If I correctly stomp it, then they aren’t. One. Two. Three. They aren’t. It’s a good thing they aren’t, because I felt Sharlene’s disgusting stare boring into me, and I wanted it to stop badly."
+
+    n "I raise my hand again. She shields her head preemptively, and it feels like we’re playing out a pre-programmed sequence."
+
+    n "I smack her head and count every smack, because 6 smacks means that she’ll stop. One. Two. Three. Four. Five. Six. Seven. I went over 6. I went over 6. I have to do it again, so I pause briefly, then I hit again. One. Two. Three. Four. I stopped. I hesitated because I saw the red swell up in her face again, and I saw her staring at me listlessly like some sort of dead fish. I heard people clamoring around me, but I needed to get it correct. One. Two. Three. Four. I stop briefly, but continue. Five. Six. Then my hand freezes in the air. The writhing fish below me then finally stops writhing, but I still see the rise and fall of its chest. I can’t believe it’s not dead. I see maggots crawling out of its exposed ribcages, too. I push it off. I heard a piercing scream then realize the voice is coming out of my own throat, because I felt something writhing on my hands. I don’t want to be here. I don’t want to be here! I don’t want to be here! I don’t want to be here! Somebody’s hand is brusquely grabbing my arm! I don’t want to be here! I don’t want to be here!" 
+
+    # @sofive: probably do something with {w} in the counting sequence here
+
+    n "I get wrestled away from the sequence. My wish is granted but whoever it is that grabbed me, I wanted dead. I wanted them dead so bad. The rotten fish on the ground is smiling at me. It didn’t actually stop smiling. She tells me something."
+    return

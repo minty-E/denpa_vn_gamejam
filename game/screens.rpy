@@ -101,7 +101,8 @@ screen say(who, what):
     window:
         id "window"
 
-        if textbox_style == "irl":
+        # textbox2.png is the pending IRL art; use the standard textbox until it exists.
+        if textbox_style == "irl" and renpy.loadable("gui/textbox2.png"):
             background Frame(Image("gui/textbox2.png"), 0, 0, tile=False)
            
             ysize 350
@@ -149,13 +150,13 @@ screen say(who, what):
             text who id "who":
                 color "#ffffff"
                 if textbox_style == "mmo":
-                    font "zpix.ttf"
+                    font "assets/fonts/zpix.ttf"
                     size 40
                     kerning 1.5
                     outlines [(4, "#7054d1", 0, 0)]
                 else:
                     size 40
-                    font "ARIALN.ttf"
+                    font "assets/fonts/ARIALN.ttf"
                     bold True
                     kerning 1.5
 
@@ -369,11 +370,11 @@ style quick_button:
 style quick_button_text:
     size 19
     color "#ffffff"
-    font "ARIALN.ttf"
+    font "assets/fonts/ARIALN.ttf"
     kerning 1.5
 
 style mmo_quick_button_text is quick_button_text:
-    font "Jersey20.ttf"
+    font "assets/fonts/Jersey20.ttf"
     size 26
     outlines [(2, "#7054d1", 0, 0)]
 
