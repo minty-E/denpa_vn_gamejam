@@ -4,15 +4,31 @@ label chapter_1_2:
 
     nvl hide dissolve
 
+    show shar_a1_casual
+    show shar_head_a
+    show shar_a_smug
+
     sh "So, first honors, huh? You really know how to persevere-"
 
     so "Don't even start with me, Shokoy."
 
     no "She tilted her head in that so-awful cartoony manner that I always hated. She then put a hand on her chin. It's like real life is a joke to this seawater creature."
 
+    hide shar_a1_casual
+    hide shar_head_a
+    hide shar_a_smug
+
+    show shar_b_casual
+    show shar_head_b
+    show shar_b_awkward
+
     sh "Don't think this is the end of me, Sofia-sama!"
 
     sh "They always say the underdogs win when you expect them to the least. I've got a steadfast heart and all the dokidoki in the world to carry me, so I'm gonna blast through third, and waaay into first."
+
+    hide shar_b_awkward
+
+    show shar_b_smile
 
     sh "You're noooooot gonna be ready for it."
 
