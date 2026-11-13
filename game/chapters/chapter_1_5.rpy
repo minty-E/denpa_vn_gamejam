@@ -5,6 +5,8 @@ label chapter_1_5:
 
     n "I raise my hand again. She shields her head preemptively, and it feels like we’re playing out a pre-programmed sequence."
 
+    nvl clear
+
     n "I smack her head and count every smack, because 6 smacks means that she’ll stop. One. Two. Three. Four. Five. Six. Seven. I went over 6. I went over 6. I have to do it again, so I pause briefly, then I hit again. One. Two. Three. Four. I stopped. I hesitated because I saw the red swell up in her face again, and I saw her staring at me listlessly like some sort of dead fish. I heard people clamoring around me, but I needed to get it correct. One. Two. Three. Four. I stop briefly, but continue. Five. Six. Then my hand freezes in the air. The writhing fish below me then finally stops writhing, but I still see the rise and fall of its chest. I can’t believe it’s not dead. I see maggots crawling out of its exposed ribcages, too. I push it off."
 
     nvl clear

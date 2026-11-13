@@ -3,11 +3,11 @@ label chapter_5_1:
 
     nvl clear
 
-    shn "\"Everyone's feelings always feel so much stronger when we share in our joys and our sorrows... ♪\""
+    shn "Everyone's feelings always feel so much stronger when we share in our joys and our sorrows... ♪"
 
-    shn "\"If my voice can reach you, surely a miracle can happen―\""
+    shn "If my voice can reach you, surely a miracle can happen―"
 
-    shn "\"And I'll neeever forget the promises we exchanged... ♪\""
+    shn "And I'll neeever forget the promises we exchanged... ♪"
 
     nvl clear
 
@@ -17,7 +17,7 @@ label chapter_5_1:
 
     nvl clear
 
-    shn "\"This looks even worse than my drawings from last year... Ahahaha.\""
+    shn "This looks even worse than my drawings from last year... Ahahaha."
 
     n "I instinctively put my thumb on the crayon Sofia's face and it smudged. I was trying to give her a bit of a pet on the head y'know, but I realized that just ruined the pure page. Whatever childhood purity it had was gone, so I wanted to stop staring at it any longer. I flipped through all of my notebook pages one last time trying to get a glimpse of what it was I was looking for, and all I got were other half-finished drawings of shokoichan. Some of her trying to pose cutely, others with her head brutally cut off―I dunno and don't remember who drew those, but I kinda let them exist in the little crevices between my notebook. One of the pages was even coated in red, but they all had one thing in common, and it was that they were all undeniably insanely ugly. Like some kinda amateur drew them, or maybe even someone in kindergarten, not in highschool. Figures since people say I got the head of a preschooler on the body of a highschooler, though I always thought they were wrong, sometimes I think I get why people say the things they do about me. I flipped back to my current drawing and even that looked like utter dogshit. But only one thing mattered to me―and that's that she's cute!"
 
@@ -31,9 +31,9 @@ label chapter_5_1:
 
     nvl clear
 
-    shn "\"......\""
+    shn "......"
 
-    shn "\"No matter how tall the wall, I'm definitely crossin' over it...\""
+    shn "No matter how tall the wall, I'm definitely crossin' over it..."
 
     nvl clear
 

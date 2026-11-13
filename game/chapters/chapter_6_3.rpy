@@ -5,27 +5,27 @@ label chapter_6_3:
 
     no "My feet felt so heavy, but each forced impact of my shoe was satisfying. I knew, at least, that people would be scared of me. That's right. If they can't accept me, they should at least fear me. This way, I don't have to be below dirt―"
 
-    sh "\"I pray I'll be believin' in tomorrow...\""
+    sh "I pray I'll be believin' in tomorrow..."
 
-    so "\"......\""
+    so "......"
 
     no "Sharlene's throat started moving in an obscenely gross way. I could tell she was trying to keep something back, because she swallows her spit and her face contorts some ways before it finally starts looking dumb. She does that awful finger fidgeting thing she likes to do."
 
-    sh "\"Hi.\""
+    sh "Hi."
 
-    so "\".........\""
+    so "........."
 
     no "She stepped out of the comfort room―actually, even just thinking about that feels obscene. I don't even want to imagine what she was doing there and I have no interest in it. She behaved the way the outcasts in her cartoons always did. She would take to eating lunch and playing games and drawing in the fucking comfort room stall of all things. She also did some other things but I don't want to bother thinking about it right now. All I know is that her wrist is completely spotless and that she's only holding that chewed-up notebook in her right hand. She gripped it harder and it started looking even more banged up. I didn't know why I had to run into her now. It didn't do anything for my already awful mood. I could probably kill her right now and it would be so much better. In fact, she could start killing me and that would already be heaps more exciting than this sham of a school."
 
-    so "\"Where's your siokoy?\""
+    so "Where's your siokoy?"
 
-    sh "\"My wha...?\""
+    sh "My wha...?"
 
-    so "\"Tch. You know. The siokoy that's going to eat the whole school?\""
+    so "Tch. You know. The siokoy that's going to eat the whole school?"
 
     no "Her face contorted into an ugly grin. She laughs. She takes way too long laughing at what I said that at this point I feel like she has nothing valuable to offer me."
 
-    sh "\"It's me!\""
+    sh "It's me!"
 
     no "I already knew she was going to say it but it didn't make it any less infuriating."
 

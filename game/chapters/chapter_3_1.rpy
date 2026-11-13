@@ -13,11 +13,11 @@ label chapter_3_1:
 
     nvl clear
 
-    son "\"....?\""
+    son "....?"
 
-    son "\".....\""
+    son "....."
 
-    son "\"Eugh.\""
+    son "Eugh."
 
     nvl clear
 

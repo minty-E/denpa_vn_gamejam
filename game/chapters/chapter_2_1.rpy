@@ -10,7 +10,7 @@ label chapter_2_1:
 
     nvl clear
 
-    shn "\"C'mon, get up and sing too! Don't you know how to have fun?\""
+    shn "C'mon, get up and sing too! Don't you know how to have fun?"
 
     n "Her shrill voice pierced my ears. Sharlene never knew how to talk at a normal volume. I always reminded her not to do it, but nothing ever stuck when it came to her."
 
@@ -20,25 +20,25 @@ label chapter_2_1:
 
     nvl clear
 
-    shn "\"Prismmmmmm Liiiiiiive!\""
+    shn "Prismmmmmm Liiiiiiive!"
 
     n "Sharlene grips my hands, and brings me into a make-shift. She spins me around and twirls, trying to emulate the ballet motions on the screen."
 
-    shn "\"Sofiaaaa! Staaaaaaardust Showerrrrrrrrr!\""
+    shn "Sofiaaaa! Staaaaaaardust Showerrrrrrrrr!"
 
-    shn "\"A... Aurora Rising...!\""
+    shn "A... Aurora Rising...!"
 
     nvl clear
 
     n "The world is just a spinning blur. The laughter from both Sofia and Sharlene doesn't reach my ears, and I start to feel weary of the dream. Sharlene laughs loudly. She declares us both best friends, but I can't make out the exact tones of her words. But I could feel the corners of my mouth turn up."
 
-    n "\"Hey, even if our time now comes to an end\""
+    n "Hey, even if our time now comes to an end"
 
-    n "\"Engrave the miracle of us being together,\""
+    n "Engrave the miracle of us being together,"
 
-    n "\"and moments I smiled by your side,\""
+    n "and moments I smiled by your side,"
 
-    n "\"because those simple things make up my world\""
+    n "because those simple things make up my world"
 
     nvl clear
 
@@ -46,10 +46,10 @@ label chapter_2_1:
 
     n "her two front baby teeth bashed in, completely mangling her face even further. Sharlene didn't care for these things back then. She only laughed harder. She asked me if she looked terrible. The words that creak out of Sofia's throat are so strange I don't even register them as mine."
 
-    son "\"You look... fine!\""
+    son "You look... fine!"
 
     nvl clear
 
-    ssh "\"Hahahahahaha!\""
+    ssh "Hahahahahaha!"
 
     return

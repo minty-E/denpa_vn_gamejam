@@ -101,17 +101,16 @@ screen say(who, what):
     window:
         id "window"
 
-        # textbox2.png is the pending IRL art; use the standard textbox until it exists.
-        if textbox_style == "irl" and renpy.loadable("gui/textbox2.png"):
+        if textbox_style == "irl":
             background Frame(Image("gui/textbox2.png"), 0, 0, tile=False)
            
-            ysize 350
+            ysize 250
 
         else:
             background Frame(Image("gui/textbox.png"), 0, 0, tile=False)
 
-            xsize 1200
-            ysize 300
+            xsize 900
+            ysize 250
 
             xalign 0.5
             yalign .90
@@ -121,13 +120,13 @@ screen say(who, what):
         text what id "what":
             if textbox_style == "mmo":
                     ypos -30
+                    xmaximum 800
             else:
                     style_prefix "say"
-                    ypos 30
+                    ypos 22
+                    xmaximum 1000
 
             xfill True
-            xmaximum 1100
-            xpos 20
 
     if who is not None:
 
@@ -136,32 +135,31 @@ screen say(who, what):
             style "namebox"
 
             if textbox_style == "mmo":
-                xsize 1200
-                ysize 150
-                xpos 120
-                ypos 0.512
+                xsize 900
+                ysize 100
+                xpos 62
+                ypos 0.48
                 padding (25, 20, 15, 10)
                 background Frame(Image("gui/namebox.png"), 0, 0, tile=False)
             else:
                 xpos 40
-                ypos 0.62
+                ypos 0.58
                 background Frame(Image("gui/namebox2.png"), 0, 0, tile=False)
 
             text who id "who":
                 color "#ffffff"
                 if textbox_style == "mmo":
                     font "assets/fonts/zpix.ttf"
-                    size 40
+                    size 30
                     kerning 1.5
                     outlines [(4, "#7054d1", 0, 0)]
+                    ypos 60
                 else:
                     size 40
                     font "assets/fonts/ARIALN.ttf"
                     bold True
                     kerning 1.5
-
-                ypos 100
-
+                    ypos 100
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -211,7 +209,7 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
     color "#ffffff"
-    size 40
+    size 30
     line_spacing 4
 
 style mmo_dialogue:
@@ -311,8 +309,8 @@ screen quick_menu():
             style_prefix "quick"
 
             if textbox_style == "mmo":
-                xalign 0.8
-                yalign 0.625
+                xalign 0.85
+                yalign 0.585
             elif renpy.get_screen("nvl"):
                 xalign 0.5
                 yalign 1.0
@@ -338,9 +336,6 @@ screen quick_menu():
         
             button action ShowMenu('save'):
                 text _("SAVE") style q_style at (None if textbox_style == "mmo" else squish_text)
-        
-            button action ShowMenu('load'):
-                text _("LOAD") style q_style at (None if textbox_style == "mmo" else squish_text)
         
             button action ShowMenu('preferences'):
                 text _("CONFIG") style q_style at (None if textbox_style == "mmo" else squish_text)
@@ -375,7 +370,7 @@ style quick_button_text:
 
 style mmo_quick_button_text is quick_button_text:
     font "assets/fonts/Jersey20.ttf"
-    size 26
+    size 19
     outlines [(2, "#7054d1", 0, 0)]
 
 
@@ -1357,7 +1352,7 @@ style skip_text:
 style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
-    font "DejaVuSans.ttf"
+    font "assets/fonts/DejaVuSans.ttf"
 
 
 ## Notify screen ###############################################################
@@ -1449,19 +1444,31 @@ screen nvl_dialogue(dialogue):
                 yfit gui.nvl_height is None
 
                 if d.who is not None:
-
                     text d.who:
                         id d.who_id
+                        xpos -10
+                        xanchor 0.0
+                        xsize 280
 
                 text d.what:
                     id d.what_id
+                    if d.who is not None:
+                        xpos 320
+                        xsize 640
+                    else:
+                        xpos 40
+                        xsize 944
 
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
 define config.nvl_list_length = gui.nvl_list_length
 
-style nvl_window is default
+style nvl_window is default:
+    xfill True
+    yfill True
+    xpos 0
+    xpadding 0
 style nvl_entry is default
 
 style nvl_label is say_label

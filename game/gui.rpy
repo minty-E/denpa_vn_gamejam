@@ -9,7 +9,7 @@ init offset = -2
 ## Calling gui.init resets the styles to sensible default values, and sets the
 ## width and height of the game.
 init python:
-    gui.init(1920, 1080) # @sofive: im changing this to actually fit the screen (i hope)
+    gui.init(1024, 768) # @sofive: im changing this to actually fit the screen (i hope)
 
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
@@ -381,15 +381,15 @@ define gui.nvl_spacing = 15
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
-define gui.nvl_name_xpos = 0.2
+define gui.nvl_name_xpos = 0.12
 define gui.nvl_name_ypos = 0.05
 define gui.nvl_name_width = 300
 define gui.nvl_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
-define gui.nvl_text_xpos = 0.35
+define gui.nvl_text_xpos = 0.20
 define gui.nvl_text_ypos = 12
-define gui.nvl_text_width = 650
+define gui.nvl_text_width = 150
 define gui.nvl_text_xalign = 0.0
 
 ## The position, width, and alignment of nvl_thought text (the text said by the
