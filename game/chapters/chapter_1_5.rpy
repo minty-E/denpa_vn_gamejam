@@ -5,9 +5,25 @@ label chapter_1_5:
 
     n "I raise my hand again. She shields her head preemptively, and it feels like we’re playing out a pre-programmed sequence."
 
-    n "I smack her head and count every smack, because 6 smacks means that she’ll stop. One. Two. Three. Four. Five. Six. Seven. I went over 6. I went over 6. I have to do it again, so I pause briefly, then I hit again. One. Two. Three. Four. I stopped. I hesitated because I saw the red swell up in her face again, and I saw her staring at me listlessly like some sort of dead fish. I heard people clamoring around me, but I needed to get it correct. One. Two. Three. Four. I stop briefly, but continue. Five. Six. Then my hand freezes in the air. The writhing fish below me then finally stops writhing, but I still see the rise and fall of its chest. I can’t believe it’s not dead. I see maggots crawling out of its exposed ribcages, too. I push it off. I heard a piercing scream then realize the voice is coming out of my own throat, because I felt something writhing on my hands. I don’t want to be here. I don’t want to be here! I don’t want to be here! I don’t want to be here! Somebody’s hand is brusquely grabbing my arm! I don’t want to be here! I don’t want to be here!" 
+    n "I smack her head and count every smack, because 6 smacks means that she’ll stop. One. Two. Three. Four. Five. Six. Seven. I went over 6. I went over 6. I have to do it again, so I pause briefly, then I hit again. One. Two. Three. Four. I stopped. I hesitated because I saw the red swell up in her face again, and I saw her staring at me listlessly like some sort of dead fish. I heard people clamoring around me, but I needed to get it correct. One. Two. Three. Four. I stop briefly, but continue. Five. Six. Then my hand freezes in the air. The writhing fish below me then finally stops writhing, but I still see the rise and fall of its chest. I can’t believe it’s not dead. I see maggots crawling out of its exposed ribcages, too. I push it off."
+
+    nvl clear
+    show layer master at fx_wave_rise(0.12, 0.85, 3.0, 2.5)
+
+    n "I heard a piercing scream then realize the voice is coming out of my own throat, because I felt something writhing on my hands."
+
+    n "I don’t want to be here. {w=0.4}I don’t want to be here! {w=0.4}I don’t want to be here! {w=0.4}I don’t want to be here!"
+    show layer master at fx_wave_hit(1.0, 0.45, 0.08, 0.5, 2.5)
+    n "Somebody’s hand is brusquely grabbing my arm! {w=0.3}I don’t want to be here! {w=0.2}I don’t want to be here!" 
 
     # @sofive: probably do something with {w} in the counting sequence here
 
+    show layer master at fx_wave(0.45, 2.5)
+
     n "I get wrestled away from the sequence. My wish is granted but whoever it is that grabbed me, I wanted dead. I wanted them dead so bad. The rotten fish on the ground is smiling at me. It didn’t actually stop smiling. She tells me something."
+
+    show layer master at fx_wave(0.70, 2.5)
+    show fx_noise at fx_static_in(1.1)
+    $ renpy.pause(1.5, hard=True)
+    nvl clear
     return

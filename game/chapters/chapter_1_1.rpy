@@ -2,13 +2,14 @@ label chapter_1_1:
 
     scene bg CLASSROOM
 
-
+    $ flash()
     n "{i}Snap!{/i}" # @sofive: camera flash and click @sfx
 
     # @sofive: @music: ionias5_10_ambient.mp3
 
     n "The flash annoyingly burnt into my retinas, and I could feel an arm awkwardly shifting up against me. A girl complained that I should move over. It made me want to plant my feet even firmer on the ground. Another flash popped; I squinted hard. I hated it, every single time."
 
+    $ flash(hits=2)
     n "{i}Snap! Snap!{/i}"
 
     cla "\"Would it kill them to stop taking photos?\""
