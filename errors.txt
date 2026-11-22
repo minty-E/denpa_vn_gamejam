@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/sprites.rpy", line 40: expecting name after dot.
+    pause 0.0.5
+              ^
+
+Ren'Py Version: Ren'Py 8.5.3.26051504
+Sat Nov 21 22:47:58 2026
