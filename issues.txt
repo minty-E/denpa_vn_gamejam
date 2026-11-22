@@ -8,12 +8,15 @@
     // @sofive: fixed
 
 - nvl formatting is weird with classmate, probably just implement a similar UI with other games
+	// @n4d3k0: fixed all formatting
 
 - nvl sometimes gets overflowed so separate when necessary
+	// @n4d3k0: all done
 
 - adv formatting is weird with name, find a way to make it more consistent UI wise
 
 - just better UI in general for title and stuff (follow up with art team)
+	// @n4d3k0: implemented barebones n functional thus far
 
 - separate scenes
     // @sofive: implemented
@@ -22,23 +25,33 @@
 ====== completion progress ======
 
 - check google drive and integrate art assets
+	// @n4d3k0: all in beside kids sequence and some that lack direction info
 
 - check discord channel and integrate audio and sfx
 
 - implement scene screen (UI element ask group)
+	
 
 ====== asset integration ======
 
 - text UI (textboxes and stuff and novel formatting)
+	// @n4d3k0: think this is taken care of
 
 - finish music integration with the script and stuff
 
 - sprites and layered images !! important
+	// @n4d3k0: done and holy shit (missing some monsters which do not appear in the story thu far)
 
 - CGs (ask team about this)
+	// @n4d3k0: missing kids sequence as stated above
 
 - backgrounds integration
+	// @n4d3k0: done
 
 - script and ordering
+	// @n4d3k0: caught up thus far with script
 
 - title cards
+	// @n4d3k0: temporary title card implemented while waiting for art assets
+	// @n4d3k0: if this refers to chapters, missing prologue (can copy paste format 
+			from ch1)

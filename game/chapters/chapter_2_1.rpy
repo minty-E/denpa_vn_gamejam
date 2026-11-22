@@ -1,8 +1,10 @@
 label chapter_2_1:
-    scene
+    scene HOME LIVING ROOM
     with Fade(0.5, 0.0, 1.0)
 
     nvl clear
+
+    show cg CRT with Dissolve(1.5)
 
     n "I dreamt the day before the rites."
 
@@ -32,13 +34,13 @@ label chapter_2_1:
 
     n "The world is just a spinning blur. The laughter from both Sofia and Sharlene doesn't reach my ears, and I start to feel weary of the dream. Sharlene laughs loudly. She declares us both best friends, but I can't make out the exact tones of her words. But I could feel the corners of my mouth turn up."
 
-    n "Hey, even if our time now comes to an end"
+    n "{i}Hey, even if our time now comes to an end"
 
-    n "Engrave the miracle of us being together,"
+    n "{i}Engrave the miracle of us being together,"
 
-    n "and moments I smiled by your side,"
+    n "{i}and moments I smiled by your side,"
 
-    n "because those simple things make up my world"
+    n "{i}because those simple things make up my world"
 
     nvl clear
 
@@ -51,5 +53,10 @@ label chapter_2_1:
     nvl clear
 
     ssh "Hahahahahaha!"
+
+    hide screen say
+    scene black
+    with Dissolve(1.5)
+    with Pause(1)
 
     return

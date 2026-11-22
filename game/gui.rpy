@@ -25,7 +25,9 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#0099cc'
+define gui.accent_color = '#91dbfb'
+
+define gui.show_name = False
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
@@ -60,7 +62,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "assets/fonts/MS Gothic.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "assets/fonts/ARIAL.ttf"
+define gui.name_text_font = "assets/fonts/MS Gothic.ttf"
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "assets/fonts/MS Gothic.ttf"
@@ -69,7 +71,7 @@ define gui.interface_text_font = "assets/fonts/MS Gothic.ttf"
 define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 35
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 33
@@ -97,7 +99,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 250
+define gui.textbox_height = 260
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -131,7 +133,7 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_ypos = 0.5
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
@@ -237,7 +239,7 @@ define config.thumbnail_width = 384
 define config.thumbnail_height = 216
 
 ## The number of columns and rows in the grid of save slots.
-define gui.file_slot_cols = 3
+define gui.file_slot_cols = 2
 define gui.file_slot_rows = 2
 
 
@@ -272,7 +274,7 @@ define gui.pref_button_spacing = 0
 define gui.page_spacing = 0
 
 ## The spacing between file slots.
-define gui.slot_spacing = 15
+define gui.slot_spacing = 80
 
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0
@@ -341,22 +343,22 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 210
+define gui.history_height = None
 
 ## Additional space to add between history screen entries.
-define gui.history_spacing = 0
+define gui.history_spacing = 90
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
-define gui.history_name_xpos = 233
+define gui.history_name_xpos = 220
 define gui.history_name_ypos = 0
-define gui.history_name_width = 233
+define gui.history_name_width = 180
 define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
-define gui.history_text_xpos = 255
+define gui.history_text_xpos = 230
 define gui.history_text_ypos = 3
-define gui.history_text_width = 1110
+define gui.history_text_width = 900
 define gui.history_text_xalign = 0.0
 
 

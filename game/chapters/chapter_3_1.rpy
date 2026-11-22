@@ -1,5 +1,6 @@
 label chapter_3_1:
     scene bg JP RESTAURANT
+    with Dissolve(2)
 
     nvl clear
 
