@@ -71,7 +71,10 @@ label chapter_5_1:
 
     scene black with Dissolve(3)
 
-    n "I closed my eyes shut, real tight, and I imagined a flood washing over the school. The siokoy swam in the waters and gobbled everyone's heads up, and eventually the entire flood turned transparent red. The only one it didn't eat was me, `cus I could breathe in the water much like he can, so he recognized that I was a friend, one of his species. I smiled and shook the siokoy's hand, while Sofia's disembodied body floated around spewing blood from the headless neck. In my little vision, I declared the siokoy my new best friend, and that he was now my new Pomorimo-friend."
+    n "I closed my eyes shut, real tight, and I imagined a flood washing over the school. The siokoy swam in the waters and gobbled everyone's heads up, and eventually the entire flood turned transparent red."
+
+
+    call imagination_cg
 
     n "Even though that should've been a happy thing to think, I couldn't really feel happy about it at all."
 

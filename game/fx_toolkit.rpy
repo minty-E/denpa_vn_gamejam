@@ -4,7 +4,7 @@ image cg SCENE2 = "assets/cgs/cg_SCENE2.png"
 image cg LAYOUT = "assets/cgs/cg_LAYOUT.png"
 
 
-init -10 python:
+init python:
 
     renpy.register_shader(
         "vn.wave",
@@ -21,7 +21,6 @@ init -10 python:
             vec2 lv_uv = (v_tex_coord - vec2(0.5)) * u_wave_margin + vec2(0.5);
             float lv_ph = u_time * u_wave_speed;
 
-            /* one wave across the screen, drifting */
             lv_uv.x += sin(lv_uv.y * u_wave_freq * 6.2832 + lv_ph) * u_wave_depth * 0.010 * lv_a;
             lv_uv.y += cos(lv_uv.x * u_wave_freq * 4.3982 - lv_ph * 0.8) * u_wave_depth * 0.008 * lv_a;
 
@@ -43,7 +42,6 @@ init -10 python:
             float lv_n2 = fract(lv_n * 7.0 + u_time);
             float lv_lum = mix(lv_n, lv_n2, 0.35) * u_static_grain;
 
-            /* vertical hold: a rolling dark bar with a bright edge under it */
             float lv_roll = fract(v_tex_coord.y + u_time * u_static_roll);
             float lv_bar = smoothstep(0.0, 0.05, lv_roll) * (1.0 - smoothstep(0.05, 0.16, lv_roll));
             lv_lum *= 1.0 - 0.55 * lv_bar;
@@ -130,15 +128,6 @@ screen fxflash_screen(hold=0.06, dur=0.36, peak=1.0, hits=1):
 init python:
 
     def flash(hold=0.06, dur=0.36, peak=1.0, hits=1):
-        """
-        Fire a full-screen camera flash over the scene, the say/NVL box and the
-        quick menu. The screen is torn down first so a second call restarts the
-        animation instead of reusing the finished one.
-
-            $ flash()
-            $ flash(hits=2)
-            $ flash(hold=0.25, peak=1.0, dur=0.6)
-        """
         renpy.hide_screen("fxflash")
         renpy.show_screen("fxflash_screen", _tag="fxflash", hold=hold, dur=dur, peak=peak, hits=hits)
 
