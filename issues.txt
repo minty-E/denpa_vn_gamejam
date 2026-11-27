@@ -21,6 +21,8 @@
 - separate scenes
     // @sofive: implemented
 
+- UI screens/different scenes not overlapping with assets
+	// @sofive: this is stuff like pause screen, save/load, config etc
 
 ====== completion progress ======
 

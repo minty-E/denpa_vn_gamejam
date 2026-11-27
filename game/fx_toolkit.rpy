@@ -27,25 +27,27 @@ init python:
             gl_FragColor = texture2D(tex0, clamp(lv_uv, 0.002, 0.998));
         """)
 
+    
+
+
     renpy.register_shader(
-        "vn.static",
+        "vn.static", #@sofive: new and better imp of tv static hopefully, credit/inspiration: https://github.com/kws/tv-static
         variables="""
             uniform float u_static_amount;
-            uniform float u_static_grain;
-            uniform float u_static_roll;
+            uniform float u_static_lines;
             uniform float u_time;
             uniform vec2 u_model_size;
         """,
         fragment_300="""
-            vec2 lv_px = floor(v_tex_coord * u_model_size.xy / 2.0);
-            float lv_n = fract(sin(dot(lv_px, vec2(12.9898, 78.233)) + floor(u_time * 24.0) * 0.731) * 43758.5453);
-            float lv_n2 = fract(lv_n * 7.0 + u_time);
-            float lv_lum = mix(lv_n, lv_n2, 0.35) * u_static_grain;
+            float lv_t = mod(u_time, 100.0) + 1.0;
+            float lv_aspect = u_model_size.x / u_model_size.y;
+            vec2 lv_grid = vec2(u_static_lines * lv_aspect, u_static_lines);
+            vec2 lv_uv = (floor(v_tex_coord * lv_grid) + 0.5) / lv_grid;
 
-            float lv_roll = fract(v_tex_coord.y + u_time * u_static_roll);
-            float lv_bar = smoothstep(0.0, 0.05, lv_roll) * (1.0 - smoothstep(0.05, 0.16, lv_roll));
-            lv_lum *= 1.0 - 0.55 * lv_bar;
-            lv_lum += 0.20 * smoothstep(0.97, 1.0, lv_roll);
+            float lv_lum = fract(sin(dot(lv_uv * lv_t, vec2(12.9898, 78.233))) * 43758.5453);
+            lv_lum += fract(sin(dot(vec2(lv_t, lv_uv.y), vec2(12.9898, 78.233))) * 43758.5453) * 0.1;
+
+            lv_lum += sin(lv_uv.y * 800.0 + lv_t * 50.0) * 0.05;
 
             float lv_a = clamp(u_static_amount, 0.0, 1.0);
             gl_FragColor = vec4(vec3(clamp(lv_lum, 0.0, 1.0)) * lv_a, lv_a);
@@ -134,38 +136,38 @@ init python:
 
 image fx_noise = Solid("#000000")
 
-transform fx_static(amount=1.0, grain=1.0, roll=0.22):
+transform fx_static(amount=1.0, lines=120.0):
     mesh True
     shader "vn.static"
     u_static_amount amount
-    u_static_grain grain
-    u_static_roll roll
+    u_static_lines lines
+    #u_static_roll roll
     pause 0
     repeat
 
-transform fx_static_burst(hold=0.18):
+transform fx_static_burst(hold=0.18, lines=120.0):
     mesh True
     shader "vn.static"
-    u_static_grain 1.0
-    u_static_roll 0.22
+    u_static_lines lines
+    #u_static_roll 0.20
     u_static_amount 0.0
     linear 0.03 u_static_amount 1.0
     pause hold
     linear 0.06 u_static_amount 0.0
 
-transform fx_static_fade(amount=1.0, dur=1.4):
+transform fx_static_fade(amount=1.0, dur=1.4, lines=120.0):
     mesh True
     shader "vn.static"
-    u_static_grain 1.0
-    u_static_roll 0.22
+    u_static_lines lines
+    #u_static_roll 0.20
     u_static_amount amount
     linear dur u_static_amount 0.0
 
-transform fx_static_in(dur=0.9, grain=1.0, roll=0.22):
+transform fx_static_in(dur=0.9, lines=120.0):
     mesh True
     shader "vn.static"
-    u_static_grain grain
-    u_static_roll roll
+    u_static_lines lines
+    #u_static_roll roll
     u_static_amount 0.0
     linear dur u_static_amount 1.0
     block:

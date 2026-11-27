@@ -394,27 +394,7 @@ style mmo_quick_button_text is quick_button_text:
 screen navigation():
 
     fixed:
-        if main_menu:
-            imagebutton:
-                auto "gui/start_%s.png"
-                focus_mask True
-                action Start()
-            imagebutton:
-                auto "gui/load_%s.png"
-                focus_mask True
-                action ShowMenu("load")
-            imagebutton:
-                auto "gui/config_%s.png"
-                focus_mask True
-                action ShowMenu("preferences")
-            imagebutton:
-                auto "gui/extra_%s.png"
-                focus_mask True
-                action Notify("Extra Thingy")
-            imagebutton:
-                auto "gui/exit_%s.png"
-                focus_mask True
-                action Quit()
+        
 
         if renpy.get_screen("game_menu"):
             vbox:
@@ -475,6 +455,16 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background
+
+    imagemap:
+        ground "assets/menu/main_menu/main menu buttons.png"
+        hover "assets/menu/main_menu/main menu buttons selected.png"
+
+        hotspot (440, 350, 144, 38) action Start()
+        hotspot (440, 420, 144, 38) action ShowMenu("load")
+        hotspot (440, 491, 144, 38) action ShowMenu("preferences")
+        hotspot (440, 561, 144, 38) action Notify("Extra Thingy")
+        hotspot (440, 631, 144, 38) action Quit()
 
     ## This empty frame darkens the main menu.
     # frame:
